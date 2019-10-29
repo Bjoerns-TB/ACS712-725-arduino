@@ -22,7 +22,9 @@ public:
 private:
 	float zero = 512.0;
 	float sensitivity;
+	float VREF;
 	uint8_t pin;
+
 };
 
 #endif
