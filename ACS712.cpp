@@ -4,15 +4,19 @@ ACS712::ACS712(ACS712_type type, uint8_t _pin) {
 	switch (type) {
 		case ACS712_05B:
 			sensitivity = 0.185;
+			VREF = 5.0;
 			break;
 		case ACS712_20A:
 			sensitivity = 0.100;
+			VREF = 5.0;
 			break;
 		case ACS712_30A:
 			sensitivity = 0.066;
+			VREF = 5.0;
 			break;
 		default:
 			sensitivity = 0.066;
+			VREF = 5.0;
 			break;
 	}
 	pin = _pin;
