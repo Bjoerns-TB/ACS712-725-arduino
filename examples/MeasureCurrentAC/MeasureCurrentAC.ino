@@ -7,7 +7,6 @@
 // We have 30 amps version sensor connected to A1 pin of arduino
 // Replace with your version if necessary
 ACS712 sensor(ACS712_30A, A1);
-#define VREF 3.3
 
 void setup() {
   Serial.begin(9600);
