@@ -14,6 +14,26 @@ ACS712::ACS712(ACS712_type type, uint8_t _pin) {
 			sensitivity = 0.066;
 			VREF = 5.0;
 			break;
+		case ACS725_05AB:
+			sensitivity = 0.264;
+			VREF = 3.3;
+			break;
+		case ACS725_10AB:
+			sensitivity = 0.132;
+			VREF = 3.3;
+			break;
+		case ACS725_10AU:
+			sensitivity = 0.264;
+			VREF = 3.3;
+			break;
+		case ACS725_20AB:
+			sensitivity = 0.066;
+			VREF = 3.3;
+			break;
+		case ACS725_20AU:
+			sensitivity = 0.132;
+			VREF = 3.3;
+			break;
 		default:
 			sensitivity = 0.066;
 			VREF = 5.0;
