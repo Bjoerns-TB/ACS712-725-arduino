@@ -3,31 +3,31 @@ int zero;
 ACS712::ACS712(ACS712_type type, uint8_t _pin) {
 	switch (type) {
 		case ACS712_05B:
-			sensitivity = 0.185;
+			sensitivity = 185;
 			break;
 		case ACS712_20A:
-			sensitivity = 0.100;
+			sensitivity = 100;
 			break;
 		case ACS712_30A:
-			sensitivity = 0.066;
+			sensitivity = 66;
 			break;
 		case ACS725_05AB:
-			sensitivity = 0.264;
+			sensitivity = 264;
 			break;
 		case ACS725_10AB:
-			sensitivity = 0.132;
+			sensitivity = 132;
 			break;
 		case ACS725_10AU:
-			sensitivity = 0.264;
+			sensitivity = 264;
 			break;
 		case ACS725_20AB:
-			sensitivity = 0.066;
+			sensitivity = 66;
 			break;
 		case ACS725_20AU:
-			sensitivity = 0.132;
+			sensitivity = 132;
 			break;
 		default:
-			sensitivity = 0.066;
+			sensitivity = 66;
 			break;
 	}
 	pin = _pin;
