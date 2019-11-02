@@ -3,6 +3,7 @@
 ACS712
 ======
 An Arduino library to interact with the ACS712 Hall effect-based linear current sensor. Includes DC and RMS AC current measuring. Supports ACS712-05B, ACS712-10A, ACS712-30A sensors. Typical applications include motor control, load detection and management, switch mode power supplies, and overcurrent fault protection.
+We measure the Vcc value against the 1.1V reference.
 
 For more information see the datasheet: http://www.allegromicro.com/~/media/files/datasheets/acs712-datasheet.ashx
 
@@ -34,3 +35,8 @@ This method reads the current value of the sensor and sets it as a reference poi
 
 ### *void* **setZeroPoint(** *int* _zero **)**
 This method sets the obtained value as a zero point for measurements. You can use the previous method once, in order to find out zero point of your sensor and then use this method in your code.
+
+Calibration
+=======
+If you wan't to get the most accurate redings, it is recommended calibrating your 1.1V reference. This is done by using the calibration Sketch. This sketch will masure your Vcc against the internal 1.1V reference. By measureing the real Vcc with an multimeter it is possible to apply a correction factor: Vdmm / Vsketch = correction-factor. Mutliply it with 1125300 an you have an MCU unique factor.
+
