@@ -21,7 +21,7 @@ public:
 
 private:
 	float zero = 512.0;
-	float sensitivity;
+	int sensitivity;
 	// float VREF;
 	uint8_t pin;
 
