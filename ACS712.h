@@ -3,7 +3,7 @@
 
 #include <Arduino.h>
 
-#define ADC_SCALE 1023.0
+#define ADC_SCALE 1024.0
 // #define VREF 5.0
 #define DEFAULT_FREQUENCY 50
 
