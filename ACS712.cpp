@@ -78,7 +78,7 @@ float ACS712::getCurrentAC(uint16_t frequency) {
 	return Irms;
 }
 
-float ACS712::getCurrentAC2(uint16_t frequency) {
+float ACS712::getCurrentAC2() {
 	uint32_t period = 100000;
 	uint32_t t_start = micros();
 
