@@ -77,3 +77,26 @@ float ACS712::getCurrentAC(uint16_t frequency) {
 	float Irms = sqrt(Isum / measurements_count) / ADC_SCALE * VREF / sensitivity;
 	return Irms;
 }
+
+float ACS712::getCurrentAC2(uint16_t frequency) {
+	uint32_t period = 100000;
+	uint32_t t_start = micros();
+
+	uint32_t Isum = 0, IsumSQ = 0, measurements_count = 0;
+	int32_t Inow;
+
+	while (micros() - t_start < period) {
+		Inow = analogRead(pin) - zero;
+		Isum += Inow;
+		IsumSQ += Inow*Inow;			
+		measurements_count++;
+	}
+
+	float fzero =  (float)Isum/measurements_count;
+	IsumSQ -= 2*fzero*Isum + fzero*fzero*measurements_count;
+	if (IsumSQ<0) {IsumSQ=0;}
+
+	float Irms = sqrt(IsumSQ / measurements_count) / ADC_SCALE * VREF / sensitivity;
+	zero = (int)(zero+fzero+0.5f);
+	return Irms;
+}
