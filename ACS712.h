@@ -20,6 +20,7 @@ public:
 	float getCurrentDC();
 	float getCurrentAC();
 	float getCurrentAC(uint16_t frequency);
+	float getCurrentAC2();
 
 private:
 	float zero = 512.0;
